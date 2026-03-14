@@ -22,17 +22,27 @@ The project is structured day-wise to track my learning progress.
 
 tests
 ├── Day00 → Browser Launch
+│   └── browser_launch.spec.ts
+│
 ├── Day01 → JavaScript Data Types
+│   └── primitive_Datatype.js
+│
 ├── Day02 → Conditional Statements
+│   ├── conditional_statement.js
+│   ├── find_odd.js
+│   └── number_type.js
+│
 ├── Day03 → String Programs
-│ ├── Anagram
-│ ├── Palindrome
-│ └── String manipulation
+│   ├── anagram.js
+│   ├── palindrome.js
+│   ├── string.js
+│   └── new_js_function.js
+│
 └── Day04 → Playwright Automation
-├── Login Automation
-├── CSS Selectors
-├── Browser Launch
-└── Multiple Browser Automation
+    ├── css_login.spec.ts
+    ├── css_selector_home.spec.ts
+    ├── launch_browser.spec.ts
+    └── two_browser.spec.ts
 
 
 ---
