@@ -26,8 +26,10 @@ test("Dropdown home task", async ({page}) =>{
     
     await page.locator(`//label[@id='j_idt87:city_label']`).click();
 
-    if (await page.locator(`//li[@id='j_idt87:city_2']`).isVisible()){
-        await page.locator(`//li[@id='j_idt87:city_2']`).click();
+    const dropdownCity = page.locator(`//li[@id='j_idt87:city_2']`)
+
+    if (await dropdownCity.isVisible()){
+        await dropdownCity.click();
         console.log(`Cities belongs to Country is loaded as expected`)
     }else{
         console.log(`Cities belongs to Country is not loaded`)
