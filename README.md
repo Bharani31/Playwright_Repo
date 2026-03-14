@@ -18,8 +18,9 @@ The project is structured day-wise to track my learning progress.
 
 ---
 
-# Project Structure
+## Project Structure
 
+```
 tests
 ├── Day00 → Browser Launch
 │   └── browser_launch.spec.ts
@@ -43,7 +44,7 @@ tests
     ├── css_selector_home.spec.ts
     ├── launch_browser.spec.ts
     └── two_browser.spec.ts
-
+```
 
 ---
 
