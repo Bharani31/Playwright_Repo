@@ -2,13 +2,15 @@ import { chromium, test } from "@playwright/test";
 
 test("To launch a browser", async () => {
 
-const browserInstance = await chromium.launch({ headless: true, channel:
-"chrome" });
+    const browserInstance = await chromium.launch({
+        headless: true, channel:
+            "chrome"
+    });
 
-const browserContext = await browserInstance.newContext();
+    const browserContext = await browserInstance.newContext();
 
-const page = await browserContext.newPage();
+    const page = await browserContext.newPage();
 
-await page.goto("https://test.parts360.nl");
+    await page.goto("https://test.parts360.nl");
 
 });
