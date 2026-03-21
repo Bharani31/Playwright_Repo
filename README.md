@@ -21,29 +21,43 @@ The project is structured day-wise to track my learning progress.
 ## Project Structure
 
 ```
-tests
-├── Day00 → Browser Launch
-│   └── browser_launch.spec.ts
+├───Day00
+│       browser_launch.spec.ts
+│       
+├───Day01
+│       primitive_Datatype.js
+│       
+├───Day02
+│       conditional_statement.js
+│       find_odd.js
+│       number_type.js
+│       
+├───Day03
+│       anagram.js
+│       new_js_function.js
+│       palindrome.js
+│       string.js
 │
-├── Day01 → JavaScript Data Types
-│   └── primitive_Datatype.js
+├───Day04
+│       css_login.spec.ts
+│       css_selector_home.spec.ts
+│       launch_browser.spec.ts
+│       two_browser.spec.ts
 │
-├── Day02 → Conditional Statements
-│   ├── conditional_statement.js
-│   ├── find_odd.js
-│   └── number_type.js
+├───Day05
+│       dropdown_home_task.spec.ts
+│       dropdown_withSelect.spec.ts
+│       xpath_pratice.spec.ts
 │
-├── Day03 → String Programs
-│   ├── anagram.js
-│   ├── palindrome.js
-│   ├── string.js
-│   └── new_js_function.js
+├───Day06
+│       asserstion_example.spec.ts
+│       auto_wait_task.spec.ts
+│       checkbox_task.spec.ts
+│       class_task.spec.ts
+│       radio_button_task.spec.ts
 │
-└── Day04 → Playwright Automation
-    ├── css_login.spec.ts
-    ├── css_selector_home.spec.ts
-    ├── launch_browser.spec.ts
-    └── two_browser.spec.ts
+└───Task_Marathon1
+        movie_booking.spec.ts
 ```
 
 ---
@@ -51,12 +65,18 @@ tests
 # Playwright Topics Covered
 
 - Browser Launch
-- Locators (CSS selectors)
+- Locators (CSS selectors, getByRole, getByText)
 - Assertions
 - Page title validation
 - URL validation
 - Multiple browser automation
 - Edge & Firefox execution
+- Handling dynamic elements
+- Alerts and popup handling
+- Multiple windows / tabs handling
+- Auto-wait mechanism
+- Async/await in Playwright
+- Improved test structuring
 
 ---
 
@@ -76,4 +96,4 @@ npx playwright test tests/Day04/css_login.spec.ts
 **Bharani**
 
 Automation Test Engineer  
-Java | Selenium | Playwright | API Testing
+| Playwright |
