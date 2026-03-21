@@ -1,0 +1,349 @@
+📑 Agenda for Week 3 Day 1: Handling Playwright using XPATH
+🎯 [ Focus: Mastering the features of Playwright on Locators, Dropdown & Assertions]  
+
+📆 Date: 14 March [Saturday]
+
+1. XPath Selectors
+* Relative vs. Absolute XPath: What's Better? 
+* Advanced relative Xpath- Axes  
+* Practical Use Cases with XPath Examples.
+
+* Live hands-on using relative xpath.
+
+* BREAK
+
+2. Handling Dropdowns  
+* Understanding dropdown types: 'select' tags and custom dropdowns.  
+* Selecting options by value, label, or index.
+
+* BREAKOUT 1 : Hands-on Example: Handling Dropdowns in leaftaps lead creation.
+
+3. Assertions Using the 'expect' Library  
+* Commonly used assertions and their applications. 
+
+* BREAKOUT 2 : Hands-on Example: Handling Assertions in leafground.
+
+
+----------------------------------------------------------------------------------------------
+
+Notes:
+------
+Xpath two types:
+
+1. Absolute Xpath
+2. Relative Xpath 
+
+-----------------------------------------------------------------------------
+
+Absolute Xpath :
+/html/body/div[2]/div[2]/div/form/p/input
+
+
+Relative Xpath :
+
+Two types :
+
+Basic Relative Xpath :
+
+//tagName[@attribute='attributeValue’] --> attribute based xpath
+//tagName[text()='text value in DOM']  --> text based xpath
+//tagName[contains(@attribute, 'Partial value of the attribute')] --> partial attribute based xpath
+//tagname[contains(text(),' Partial text in my DOM' ')] --> partial text based xpath
+(//tagName[@attribute='attributeValue'])[index] --> collection based xpath
+ 
+
+
+Advanced Relative Xpath Locators :
+--------------------------
+Parent To child   : 
+-----------------
+( parent relative xpath)/(tagName of child)
+
+(//form[@id="login"]/p)[3]
+
+
+GrandParent to child Relation   :
+--------------------------------
+GrandParent relative xpath//tagName of grand child
+
+(//form[@id="login"]//label)[2]
+
+--------------------------------------------------------
+
+Child to parent :      
+----------------
+Child relative xpath/parent::parent tagName --> //input[@id="username"]/parent::p
+
+//input[@id="username"]/parent::p
+
+Grandchild to grandparent :
+-----------------------------
+GrandChild relative xpath/ancestor::tagName of grand parent --> //input[@id="password"]/ancestor::p
+
+//label[text()="Username"]/ancestor::form
+
+---------------------------------------------------------------------------
+
+Elder sibling to younger sibling : (Top to Bottom)
+----------------------------------
+(Elder sibling relative xpath)/following-sibling::tagName of younger sibling --> //label[text()='Username']/following-sibling::input
+
+//label[text()="Username"]/following-sibling::input
+
+Younger sibling to Elder Sibling : (Bottom to Top)
+-----------------------------------
+(Younger sibling relative xpath)/preceding-sibling::tagName of elder sibling --> //input[@id='username']/preceding-sibling::label
+
+(//input[@id="username"]/preceding-sibling::label)
+
+
+------------------------------------------------------------
+
+
+Elder Cousin to Younger Cousin : (Top to Bottom)
+--------------------------------
+Elder cousing relative xpath/following::tagName of younger Cousin --> //input[@id="username"]/following::label
+
+//input[@id="username"]/following::input
+
+Younger Cousin to Elder Cousin: (Bottom to Top)
+-------------------------------
+Younger cousin xpath/preceding::tagName of Elder cousin --> //label[text()='Password']/preceding::input
+
+(//input[@class="decorativeSubmit"]/preceding::input)[1]
+
+
+
+Select options used based on priority:
+-----------------------------------------
+
+
+1. Select By Value :
+-Stable and less likely to change since the value is often connected to your backend
+
+  await page.selectOption(`#createLeadForm_dataSourceId`,{value:"LEAD_DIRECTMAIL"})
+
+2. Select By Label :
+Tend to change due to business requirements / geography
+Example travel name of places in your website
+
+3. Select BY Index :
+When ever there is not change in the order of your dropdown can go for select by index 
+
+Non-select tags
+---------------
+1. Locate your dropdown and use click()/ enter the value
+2. locate the particular option from the dropdownlist - clickit
+
+
+
+Ways of handling dropdown:
+----------------------------
+
+| Method     | Stability | Readability | Use When...                         |
+| ---------- | --------- | ----------- | ----------------------------------- |
+| By value |   High    |   Low       | Most reliable, backend-driven IDs   |
+| By label |   Medium  |   High      | UI is stable or for quick checks    |
+| By index |   Low     |   Low       | Only if no other way /static order |
+
+----------------------------------------------------------------------------------
+
+
+Assertions :
+-----------
+Use expect() library for assertions
+
+expect library meaning - to expect something
+
+5 types of Assertions in Playwright:
+--------------------------------------
+
+1. Generic Assertion.
+
+Assertions on variables or values, not directly tied to UI elements.
+
+toBe – Checks strict equality (===) between two values.
+toEqual – Checks deep equality of objects/arrays/values.
+toContain – Checks whether a value/substring exists inside an array/string.
+toBeTruthy – Passes if the value is considered true in JavaScript.
+toBeFalsy – Passes if the value is considered false in JavaScript.
+toBeGreaterThan – Checks if a number is greater than another number.
+
+
+2. Locator Assertion.
+Assertions performed on UI elements indentified using locators
+
+- toBeVisible()- checks if the element is visible on the page.
+- toBeEnabled()- checks if the element is enabled and can be interacted with.
+- toBeEditable()- checks if the element is editable, such as input fields.
+
+3. Page Assertion.
+
+Assertions made on the page object , such as URL and title.
+
+toHaveURL(url) - checks if the current page URL matches the expected URL.
+toHaveTitle() - checks if the page title matches the expected title.
+
+4. Snapshot Assertions. --> Visual Regression testing
+Assertions comparing two visual elments from the UI particular
+
+5. API refernce Assertions. --> REST API 
+Assertions used check your API reponses 
+
+
+Based on Functionality 
+--------------------
+
+1. Auto retry assertion.
+2. Non-retry assetion.
+
+
+Hard Assertion.--> It will abruptly stop your execution.
+Soft Assertion. --> Informing that he assertion has failed and it will not stop execution it will move to next  part of execution.
+
+Negating matchers
+
+In general, we can expect the opposite to be true by adding a .not to the front of the matchers:
+
+expect(value).not.toEqual(0);
+await expect(locator).not.toContainText('some text');
+
+
+Classroom activity :
+---------------------
+
+
+
+Maximizing the browser window in Playwright:
+-----------------------------------------------
+
+{
+      name: 'chromium',
+      use: { browserName:"chromium", 
+        viewport:null, // disable the deafult 1280x720
+        launchOptions:{
+          args:['--start-maximized'],
+        },
+      },
+    }, 
+
+    Firefox :
+    ----------
+
+        name: 'firefox',
+      use: { browserName:"firefox", 
+        viewport:{ width: 1920, height: 1080 }, // disable the deafult 1280x720
+        launchOptions:{
+          args:['--start-maximized'],
+        }
+}
+},
+    }, 
+
+    Webkit :
+    ----------
+
+        name: 'webkit',
+      use: { browserName:"webkit", 
+        viewport:{ width: 1920, height: 1080 }, // disable the deafult 1280x720
+        launchOptions:{
+          args:['--start-maximized'],
+        }
+}
+},
+    },
+
+
+
+
+
+
+--------------------------------------------------------------
+timeouts in playwright :
+----------------------
+
+1. test timeout:
+-----------------
+Timeout for a specific test execution.
+
+test.setTimeout(20000)
+
+2. assertion timeout:
+----------------------
+Timeout for assertion of a weblelement.
+
+In config file below timeout :
+expect:{
+timeout:15000
+}
+
+In script : 
+await expect(locator).toHaveText('Submit',{timeout:15000})
+
+3. Action timeout :
+--------------------
+Timeout for each and every action performed like click(), fill()
+
+In config mention under "use" :
+use:{
+actionTimeout:15000
+}
+
+In script : 
+await page.locator("#password").fill("crmsfa",{timeout:20000})
+
+4. GLobal timeout :
+-----------------------
+Implemented when we execute in pipleines.
+
+In config file under "timeout" :
+
+globalTimout : 60*60*
+
+
+----------------------------------------------------------------------
+
+Difference between "await" and "Auto wait" in Playwright
+
+
+1️⃣ What await really does
+
+await only waits for a Promise to resolve.
+
+await page.click("#login");
+
+
+This only means:
+
+“Wait until the click command is sent to the browser”
+
+It does NOT mean:
+
+Button is visible
+
+Button is enabled
+
+Page finished loading
+
+Element exists
+
+It only waits for Playwright to issue the command.
+
+2️⃣ What Playwright Auto-Wait does
+
+Before Playwright performs any action like:
+
+await page.click("#login")
+
+
+Playwright internally waits until:
+
+✔ element exists
+✔ element is visible
+✔ element is enabled
+✔ element is not covered
+✔ page is stable
+
+Only then it clicks.
+
+This is Auto-Wait.

@@ -1,0 +1,496 @@
+📑 Agenda – Day 02 | String and Arrays in JavaScript  
+⏱ Total Duration: 4 Hours
+----------------------------------------------------------------------------
+| 	Time	    |                    Session                       | Duration|
+|-------------------|--------------------------------------------|---------|
+| 2:30 PM – 3:00 PM |  Variables: let, const	       	          | 30 mins |
+| 3:00 PM – 3:30 PM |  Operators: Arithmetic                     | 30 mins |
+| 3:30 PM – 3:45 PM |  ☕ Break                                  | 15 mins |
+| 3:45 PM – 4:15 PM |  Control Statement (Condition)             | 30 mins |
+| 4:15 PM – 4:45 PM |  Iteration Statement		               | 30 mins |
+| 4:45 PM – 5:15 PM |  💻 Breakout Session (Hands-on)            | 30 mins |
+| 5:15 PM – 5:30 PM |  ☕ Break              		              | 15 mins |
+| 5:30 PM – 6:20 PM |  String                                    | 50 mins |
+| 6:20 PM – 6:30 PM |  Recap			                         | 15 mins |
+----------------------------------------------------------------------------
+
+🚦 Visual Timeline:
+SYNCHRONOUS:
+Task1: ██████████→
+Task2:              ████████→
+Task3:                       ████████→
+Time:  Total = Sum of all tasks
+
+ASYNCHRONOUS:
+Task1: ████████→
+Task2:    ████████→
+Task3:       ████████→
+Task4: ██→
+Time:  Total ≈ Longest task
+
+📊 Comparison Table
+========================================================================
+Aspect	      ||	  Synchronous   	  ||		Asynchronous	     ||
+========================================================================
+Execution		     One at a time			Multiple in progress
+Waiting			Blocks until done		Non-blocking
+Order			Predictable (sequential)	Less predictable
+Performance		Slower for I/O			Faster for I/O
+Complexity		Simple to understand	Harder to manage
+Use case		     Simple calculations		Network/files/timers
+
+-----------------------------------------------------------------------------
+
+📝 What is var in JavaScript?
+🎯 Quick Answer
+var is a KEYWORD used to declare variables in JavaScript.(since 1995 [JavaScript's birth])
+var → KEYWORD that TELLS JavaScript: 
+
+"Hey, I'm creating a new variable here!"   
+      ↓   
+Then you give it a NAME and optionally a VALUE
+
+🎯 Bottom Line
+var is just a keyword that says: "I'm about to create a variable!
+The actual data type comes from WHAT you store in the variable, not from var itself!
+---------------------------------------------------------------------
+📝 Why let Was Invented in ES6 (2015)
+🎯 The Short Answer
+let was invented to fix the problems and weird behaviors of var that confused developers for 20 years!
+🔍 The Problem with var (Before 2015)
+Problem 1: Can Redeclare Same Variable
+Problem 2: Variable Hoisting (Weird)
+Problem 3: No Block Scope(fuction scopped)
+Problem 4: Loop Issues
+
+✅ How let Fixes These Problems
+Fix 1: Proper Block Scope
+Fix 2: No Hoisting Weirdness
+Fix 3: No Redeclaration
+Fix 4: Loop Variables Work Correctly
+
+
+📈 The Evolution Timeline
+
+1995: var invented (only way to declare variables)
+     ↓
+1995-2015: Developers struggled with var's quirks
+     ↓
+2009: ES5 tries to fix with "use strict" (partial fix)
+     ↓
+2015: ES6 introduces let and const (real solution!)
+     ↓
+Today: let is the recommended way to declare variables
+
+
+💡 Why It Took 20 Years?
+
+==================================================================
+Reason		                ||	    Explanation  		      ||
+===================================================================
+Backward Compatibility		     Can't break existing websites!
+Standards Process		          ECMAScript updates take time
+Browser Support			     Need all browsers to implement
+Community Feedback		          Had to prove let was really needed
+===================================================================
+
+📊 ES6 Impact Summary
+		
+=================================================================================
+Before ES6	      ||	  After ES6   	  ||	 	Improvement	               ||
+=================================================================================
+var only			     let/const			     ✅ Block scope
+Callback hell			Promises			     ✅ Cleaner async
+Function expressions	Arrow functions	     ✅ Shorter, lexical this
+String concatenation	Template literals		✅ Readable strings
+No classes			class syntax			✅ OOP patterns
+No modules			import/export			✅ Code organization
+==================================================================================
+
+
+
+
+Topic: Variables in JavaScript
+Focus: let and const
+
+==================================================
+
+LET – Behaviour Notes
+==================================================
+
+Definition
+Used to declare a block-scoped variable.
+
+Scope Behaviour
+• Block-scoped ({ })
+• Accessible only within the block where declared
+• Not accessible outside the block
+
+Example Structure
+
+let variableName = value;
+
+Key Characteristics
+• Can be reassigned
+• Cannot be redeclared in the same scope
+• Best used when value will change
+
+Reassignment Behaviour
+• Allowed
+• Useful for counters and dynamic values
+
+Redeclaration Behaviour
+• Not allowed in the same scope
+• Prevents accidental duplicate declarations
+
+Temporal Dead Zone (TDZ)
+• Cannot access before declaration
+• Causes ReferenceError
+
+Use Cases
+• Loop counters
+• Conditional updates
+• Dynamic data handling
+
+==================================================
+2) CONST – Behaviour Notes
+
+Definition
+Used to declare a block-scoped constant variable.
+
+Scope Behaviour
+• Block-scoped ({ })
+• Accessible only within declared block
+
+Example Structure
+
+const variableName = value;
+
+Key Characteristics
+• Must be initialized at declaration
+• Cannot be reassigned
+• Cannot be redeclared in same scope
+
+Reassignment Behaviour
+• Not allowed
+• Causes TypeError if attempted
+
+
+Use Cases
+• Configuration values
+• Fixed references
+• Constants
+• API endpoints
+• Base URLs
+---------------------------------------------------------------------
+Arithmetic Operators :
+
+ Arithmetic operators are used in mathematical expressions in the same way that they are used in algebra. The following table lists the arithmetic operators:
+ Operator     Result
+ + 		Addition (also unary plus)
+ -		Subtraction (also unary minus)
+ * 		Multiplication
+ / 		Division
+ % 		Modulus- REMAINDER
+
+ -----------------------------------------
+ ++ 		Increment
+ += 		Addition assignment
+ -= 		Subtraction assignment
+ *= 		Multiplication assignment
+ /= 		Division assignment
+ %= 		Modulus assignment
+ -- 		Decrement
+
+ex :    str += temp+ " "  ( Loops/accumulation )
+
+ -----------------------------------------
+Relational Operators :
+
+ The relational operators determine the relationship that one operand has to the other. 
+Specifically, they determine equality and ordering. The relational operators are shown here:
+ Operator		Result
+ ==			Equal to
+ !=			Not equal to
+ >			Greater than
+ <			Less than
+ >=			Greater than or equal to
+ <=			Less than or equal to
+  
+ The outcome of these operations is a boolean value. The relational operators are most frequently used in the expressions that control the if statement and the various loop statements.
+
+Here, condition is a Boolean expression. If condition is true, then the statement is executed. 
+If condition is false, then the statement is bypassed
+
+
+The Bitwise Operators :
+
+ Operator   	    Result
+ !	     	Bitwise unary NOT
+ &		     Bitwise AND
+ |		     Bitwise OR
+ 
+ 
+
+=============================================================================
+Topic: Conditional Statements (JavaScript)
+
+==================================================
+
+IF STATEMENT – Behaviour Notes
+==================================================
+
+Definition
+Used to evaluate logical conditions (true / false).
+
+Execution Behaviour
+• Evaluates condition expression
+• Executes block only if condition is true
+• Supports relational and logical operators
+• Multiple conditions supported
+• Executes top-to-bottom
+
+Key Characteristics
+• Can evaluate complex expressions
+• Best suited for range-based conditions
+• Uses >, <, >=, <=, &&, ||
+• Stops after first true condition
+• Flexible and dynamic
+
+Example Use Cases
+• Marks grading system
+• Age validation
+• Tax slab calculation
+• Form validation logic
+
+
+==================================================
+2) SWITCH STATEMENT – Behaviour Notes
+
+Definition
+Used for exact value matching.
+
+Execution Behaviour
+• Evaluates expression once
+• Compares using strict equality (===)
+• Matches only exact values
+• Executes matching case block
+• Requires break to stop fall-through
+
+Structure :
+switch (expression) {
+   case value1:
+      // executes if expression === value1
+      break;
+   case value2:
+      break;
+   default:
+      // executes if no match
+}
+
+-----------------------------------------------------------
+
+Topic: Iteration Statements (JavaScript)
+Focus: for, while, do...while
+
+==================================================
+
+FOR LOOP – Behaviour Notes
+==================================================
+
+Definition
+Used when the number of iterations is known or count-controlled.
+
+Execution Behaviour
+• Executes in three parts: initialization → condition → increment/decrement
+• Condition is checked before each iteration
+• Stops when condition becomes false
+• Suitable for counter-based repetition
+
+Structure
+
+for (initialization; condition; increment) {
+   // repeated block
+}
+
+Flow Order
+
+Initialization runs once
+Condition checked
+Block executes if true
+Increment runs
+Condition rechecked
+
+Key Characteristics
+• Best for fixed iteration count
+• Loop variable usually declared inside
+• Clear and compact structure
+• Risk of infinite loop if condition never becomes false
+
+Use Cases
+• Iterating arrays
+• Number-based loops
+• Index-controlled logic
+
+==================================================
+2) WHILE LOOP – Behaviour Notes
+
+Definition
+Used when number of iterations is unknown and depends on condition.
+
+Execution Behaviour
+• Condition checked first
+• Executes only if condition is true
+• May execute zero times
+
+Structure
+
+while (condition) {
+   // repeated block
+}
+
+Flow Order
+
+Condition checked
+If true → block executes
+After execution → condition rechecked
+
+Key Characteristics
+• Entry-controlled loop
+• Best for dynamic conditions
+• Must manually control increment inside block
+• High risk of infinite loop if update missing
+
+Use Cases
+• Waiting for user input
+• Polling mechanism
+• Conditional repetition
+
+==================================================
+3) DO...WHILE LOOP – Behaviour Notes
+
+Definition
+Executes block at least once, regardless of condition.
+
+Execution Behaviour
+• Block executes first
+• Condition checked after execution
+• Continues if condition is true
+
+Structure
+
+do {
+   // repeated block
+} while (condition);
+
+Flow Order
+
+Block executes
+Condition checked
+If true → repeat
+
+Key Characteristics
+• Exit-controlled loop
+• Guaranteed minimum one execution
+• Useful for validation scenarios
+
+Use Cases
+• Menu-driven programs
+• Input validation
+• Retry mechanisms
+
+==================================================
+
+STRING – Core Behaviour Notes
+==================================================
+
+Definition
+A String is an immutable sequence of characters.
+
+Key Behaviour
+• Strings are primitive data types
+• Strings are immutable (cannot modify original value)
+• All string methods return a new string
+• Index starts from 0
+
+Example Concept
+
+"Playwright"
+P = index 0
+
+==================================================
+2) slice() – Behaviour Notes
+
+Definition
+Used to extract a portion of a string.
+
+Structure
+
+string.slice(startIndex, endIndex)
+
+Execution Behaviour
+• Returns a new string
+• End index is excluded
+• Supports negative index
+• Does NOT modify original string
+
+Important Characteristics
+
+• startIndex → position to begin extraction
+• endIndex → position to stop (not included)
+• If endIndex not given → extracts till end
+• Negative index counts from end of string
+
+Negative Index Behaviour
+
+-1 → last character
+-2 → second last
+
+Key Usage Scenarios
+
+• Extracting first few characters
+• Removing last character
+• Trimming file extensions
+• Substring extraction
+
+Why slice() is powerful
+
+• Supports negative indexing
+• More flexible than substring()
+• Predictable behaviour
+
+==================================================
+3) split() – Behaviour Notes
+
+Definition
+Used to convert a string into an array.
+
+Structure
+
+string.split(separator)
+
+Execution Behaviour
+• Returns an array
+• Splits string based on separator
+• Original string remains unchanged
+• If separator not found → returns single element array
+
+Separator Behaviour
+
+• " " → split by space
+• "," → split by comma
+• "" → split into characters
+
+Key Usage Scenarios
+
+• Converting CSV string into array
+• Parsing input values
+• Breaking sentence into words
+• Reversing string (with reverse())
+
+Why split() is important in automation
+
+• Reading test data
+• Parsing API responses
+• Extracting dynamic values
+• String manipulation workflows

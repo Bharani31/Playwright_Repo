@@ -1,0 +1,185 @@
+📑 Agenda – Day 01 | Introduction to JavaScript
+⏱ Total Duration: 4 Hours
+----------------------------------------------------------------------------
+| 	Time	    |                    Session               | Duration |
+|-------------------|------------------------------------------|----------|
+| 2:30 PM – 3:00 PM | Introduction to Playwright Program       | 30 mins |
+| 3:00 PM – 3:30 PM | Introduction to JavaScript               | 30 mins |
+| 3:30 PM – 3:45 PM | ☕ Break                                 | 15 mins |
+| 3:45 PM – 4:15 PM | Primitive Data Types                     | 30 mins |
+| 4:15 PM – 4:45 PM | 💻 Breakout Session (Hands-on / Setup Support) | 30 mins |
+| 4:45 PM – 5:00 PM | ☕ Break                                 | 15 mins |
+| 5:00 PM – 6:00 PM | Variables: var, let, const               | 60 mins |
+| 6:00 PM – 6:15 PM | Operators: Arithmetic                    | 15 mins |
+| 6:15 PM – 6:30 PM | 💻 Breakout Session (Hands-on)           | 15 mins |
+----------------------------------------------------------------------------
+
+🚦 Visual Timeline:
+SYNCHRONOUS:
+Task1: ██████████→
+Task2:              ████████→
+Task3:                       ████████→
+Time:  Total = Sum of all tasks
+
+ASYNCHRONOUS:
+Task1: ████████→
+Task2:    ████████→
+Task3:       ████████→
+Task4: ██→
+Time:  Total ≈ Longest task
+
+📊 Comparison Table
+=================================================================================
+Aspect	      ||	  Synchronous   	  ||		Asynchronous	||
+=================================================================================
+Execution		One at a time			Multiple in progress
+Waiting			Blocks until done		Non-blocking
+Order			Predictable (sequential)	Less predictable
+Performance		Slower for I/O			Faster for I/O
+Complexity		Simple to understand		Harder to manage
+Use case		Simple calculations		Network/files/timers
+
+-----------------------------------------------------------------------------
+
+#####
+📋 Overview Table : Naming Standards to be followed
+=================================================================================
+Element	     ||	Convention  ||	Example	     ||		Rule			||
+=================================================================================
+📁 File Names	camelCase	loginPage.js	All lowercase start, no spaces
+📊 Variables	camelCase	userName	Descriptive, starts lowercase
+🏗️ Classes	PascalCase	LoginPage	Starts with uppercase
+🔧 Functions	camelCase	getUserData()	Verb + Noun pattern
+=================================================================================
+#####
+---------------------------------------------------
+// ===== script.js =====
+// No packages/classes needed!
+
+// Global code (runs directly)
+console.log("Program starts here");
+
+// Functions (like Java methods)
+function greetUser(name) {
+    return `Hello, ${name}!`;
+}
+
+// Variables
+let userName = "Bhuvanesh";
+const pi = 3.14;
+
+// Calling functions
+greetUser(userName);
+---------------------------------------------------
+📌 Remember: JavaScript programs are just files containing code that runs from top to bottom. 
+		No packages, no classes required (unless you want them)!
+----------------------------------------------------
+
+💡 Separators = Punctuation marks of JavaScript
+;  → End statement
+,  → Separate items
+.  → Access properties
+() → Call functions
+{} → Code blocks/objects
+=> → Arrow functions
+
+💡 Keywords = Reserved words with special meaning
+
+let, const, if, else, for, while, 
+function, return, class, try, catch
+
+
+⚡ Memory Tips --> Think of JavaScript as: "Files full of functions that run directly!"
+		💡 JavaScript = More flexible than Java (no forced structure)
+
+📊 Quick Comparison: Java vs JavaScript
+=================================================================================
+Aspect	      ||		Java	  	  ||		JavaScript	||
+=================================================================================
+Structure	Project → Package → Class → Method	Project → File → Function
+Entry Point	public static void main()		Top-level code runs directly
+Class Required?		Yes				No (optional in ES6)
+Separators	; . , () {} []				Same + => ... :
+Keywords	50+ reserved words			40+ reserved words
+=================================================================================
+-----------------------------------------------------------------------------
+📝 What is console.log()?
+
+🎯 Quick Answer
+console.log() is JavaScript's built-in printing/debugging tool that displays output in the browser's Console or terminal.
+console   → is a built-in object in JavaScript.
+.         → Dot operator (access property/method)
+log()     → Method that prints messages
+
+📝 Printing Multiple Items in One Line with console.log()
+
+🔍 Comparison Table
+		
+=================================================================================
+Method	      ||		Syntax	  	  ||		Best For	||
+=================================================================================
+,Comma			console.log(a, b, c)		    Quick debugging
++ Operator		"a: " + a + " b: " + b		    Simple strings
+Template Literals	`${a} ${b}`			    Variables + text
+=================================================================================
+
+###
+📋 JavaScript Primitive Types
+
+=================================================================================
+Primitive	||	Example		  ||	       Can use methods?	        ||
+=================================================================================
+string			"hello"				✅ "hello".toUpperCase()
+number			42				✅ 42..toFixed(2)
+boolean			true				✅ true.toString()
+undefined		undefined			⚠️ No methods
+null			null				⚠️ No methods
+💡 rarely used
+symbol			Symbol()			✅ Limited methods
+bigint			123n				✅ 123n.toString()
+=================================================================================
+❌ Don't Use BigInt When:
+// 1. Need decimals
+const price = 10.99;  // Use Number, not BigInt
+
+// 2. Performance-critical code (BigInt is slower)
+
+// 3. Interacting with APIs expecting Numbers
+
+🎯 Memory Trick
+"BigInt is your friend when numbers go beyond 16 digits, keeping precision intact when Number fails and fidgets!"
+Safe range: Up to 16 digits (9007 trillion) → Use Number
+Beyond that: Use BigInt with 'n' suffix
+
+📋 Quick Reference Card
+		
+=================================================================================
+Operation	   ||	   Syntax   		 ||	      Example	        ||
+=================================================================================
+Create			n suffix			var x = 123n;
+Create from string	BigInt()			BigInt("999")
+Convert to Number	Number()			Number(123n)
+Convert to BigInt	BigInt()			BigInt(123)
+Compare with Number	Compare after conversion	123n === BigInt(123)
+=================================================================================
+
+###
+
+📝 What is var in JavaScript?
+🎯 Quick Answer
+var is a KEYWORD used to declare variables in JavaScript.(since 1995 [JavaScript's birth])
+var → KEYWORD that TELLS JavaScript: 
+
+"Hey, I'm creating a new variable here!"   
+      ↓   
+Then you give it a NAME and optionally a VALUE
+
+🎯 Bottom Line
+var is just a keyword that says: "I'm about to create a variable!
+The actual data type comes from WHAT you store in the variable, not from var itself!
+
+===================================================================================
+ 
+
+
+=============================================================================
